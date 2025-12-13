@@ -17,7 +17,7 @@ So instead of turning `hello (world) test` into complete chaos, it actually keep
 
 ¯\\\_(ツ)\_/¯ 
 
-Maybe you're doing some RTL language testing. Maybe you're making cursed content. Maybe you just think it's neat. I'm not here to judge.
+As said above, personally mainly made this for translating games and software, where it just doesn't work with RTL.
 
 ## Installation
 
