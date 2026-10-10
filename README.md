@@ -44,6 +44,15 @@ python flip_lines.py input.txt
 
 Windows users: there's a `RUN.ps1` if you're into that. Just put whatever you want into input.txt.
 
+## Web version
+
+There's also `flip.js`, a JavaScript port that does the same thing in the browser or in node, no install needed. You can try it at https://krislyz.com/rtl-flipper/ and it all runs in your browser, nothing gets uploaded.
+
+```js
+const flip = require('./flip.js');
+console.log(flip('your text'));
+```
+
 ## Technical stuff (for the nerds)
 
 - Handles **grapheme clusters** properly - emojis, combining characters, all that Unicode nonsense
