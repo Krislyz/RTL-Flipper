@@ -2,7 +2,7 @@
 
 Reverses text while keeping the important bits readable. Because sometimes you need backwards text that doesn't look like complete gibberish.
 Personally mainly made this for translating games and software, where it just doesn't work with RTL.
-**THIS UNFORTUNATELY DOES NOT WORK WELL WITH ARABIC AND DOESN'T FLIP ENGLISH!** Just wanted to let you know.
+Arabic works too: letters get swapped for their joined shapes so they still connect after the flip. English is left alone unless you ask for it with `--english`.
 
 ## What does this thing do?
 
@@ -40,6 +40,9 @@ echo "hello world" | python flip_lines.py
 
 # Or just
 python flip_lines.py input.txt
+
+# Flip English too (numbers still stay put)
+python flip_lines.py --english input.txt output.txt
 ```
 
 Windows users: there's a `RUN.ps1` if you're into that. Just put whatever you want into input.txt.
@@ -51,6 +54,7 @@ There's also `flip.js`, a JavaScript port that does the same thing in the browse
 ```js
 const flip = require('./flip.js');
 console.log(flip('your text'));
+console.log(flip('your text', true)); // flips English too
 ```
 
 ## Technical stuff (for the nerds)
@@ -58,6 +62,8 @@ console.log(flip('your text'));
 - Handles **grapheme clusters** properly - emojis, combining characters, all that Unicode nonsense
 - O(n²) bracket matching because it works and I'm not rewriting it
 - Preserves whitespace around preserved tokens
+- Arabic gets shaped into presentation forms (with the lam-alef ligatures) before the flip, and numbers in any script stay in order
+- `python test_flip.py` runs the tests
 - Won't explode on weird Unicode edge cases (probably)
 
 ## License
